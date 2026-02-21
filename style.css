@@ -1,0 +1,175 @@
+/* =====================================================
+   Julian Limberg – Simple Academic Website
+   ===================================================== */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #222;
+  background: #fff;
+}
+
+a { color: #333; text-decoration: underline; }
+a:hover { color: #000; }
+
+/* ---- Two-column layout ---- */
+.page {
+  display: flex;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 60px auto 40px;
+  padding: 0 20px;
+  gap: 50px;
+}
+
+/* ---- Sidebar (left) ---- */
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 40px;
+  text-align: center;
+}
+
+.photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 14px;
+  border: 1px solid #ddd;
+}
+
+.sidebar h1 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.position {
+  font-size: 0.82rem;
+  color: #555;
+  margin-bottom: 2px;
+  font-style: italic;
+}
+
+.institution {
+  font-size: 0.82rem;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 12px;
+}
+
+.sidebar nav a {
+  font-size: 0.88rem;
+  color: #333;
+  text-decoration: none;
+  padding: 2px 0;
+  border-bottom: 1px solid transparent;
+}
+
+.sidebar nav a:hover {
+  border-bottom-color: #333;
+}
+
+/* ---- Main content (right) ---- */
+main {
+  flex: 1;
+  min-width: 0;
+}
+
+section {
+  margin-bottom: 2.2rem;
+}
+
+section p {
+  margin-bottom: 0.85rem;
+  font-size: 0.95rem;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+  margin-bottom: 0.9rem;
+  color: #222;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+li {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+li::before {
+  content: "–  ";
+  color: #aaa;
+}
+
+em { font-style: italic; color: #444; }
+strong { font-weight: bold; }
+
+/* ---- Publication / WIP links ---- */
+#publications a, #working-papers a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #5b9bd5;
+  text-underline-offset: 2px;
+}
+#publications a:hover, #working-papers a:hover {
+  text-decoration: none;
+}
+
+/* ---- Footer ---- */
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  padding: 30px 20px;
+  border-top: 1px solid #eee;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+footer a { color: #aaa; }
+footer a:hover { color: #555; }
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .page {
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 30px;
+  }
+  .sidebar {
+    width: 100%;
+    position: static;
+  }
+  .photo {
+    width: 130px;
+    height: 130px;
+  }
+}
